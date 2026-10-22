@@ -1,7 +1,13 @@
 {
   "name": "rift-player-card",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Riot player card generator and check-in tool.",
+  "repository": {
+    "url": "https://github.com/Melonendk/riot-player-card"
+  },
+  "bugs": {
+    "url": "https://github.com/Melonendk/riot-player-card/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

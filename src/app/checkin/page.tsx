@@ -129,7 +129,7 @@ export default function CheckInPage() {
             Player Card
           </Link>
           <Link 
-            href="https://github.com/melonendk"
+            href="https://github.com/Melonendk/riot-player-card"
             target="_blank" 
             className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "py-4")}
           >
