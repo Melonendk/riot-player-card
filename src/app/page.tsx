@@ -11,8 +11,9 @@ import {
 } from "@/components/ui/card";
 import { CaretDownIcon, DownloadIcon, GithubLogoIcon, QrCodeIcon } from "@phosphor-icons/react";
 import Link from "next/link";
-import { cn } from "../lib/utils";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible";
+import { cn } from "@/lib/utils";
+import { isValidRiotId } from "@/lib/riot-id"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/ui/collapsible";
 import { Badge } from "@/ui/badge";
 
 export default function PlayerCardPage() {
@@ -35,7 +36,7 @@ export default function PlayerCardPage() {
     link.click();
   }
 
-  const validRiotId = /^[^#\s]+#[^#\s]+$/.test(riotId.trim());
+  const validRiotId = isValidRiotId(riotId);
   const infoButton = (
     <Button variant="ghost" className="py-4 sm:py-6 px-4 w-full">
       <span className="text-xl">Info</span>
@@ -129,9 +130,9 @@ export default function PlayerCardPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.4em] text-red-400">
                   Riot ID
                 </p>
-                <Badge variant="secondary" className="mt-3 break-all text-xl font-bold tracking-tight py-4 rounded-md">
-                  {riotId.trim() || "YourName#TAG"}
-                </Badge>
+                <h2 className="relative mt-3 w-full wrap-break-word text-center font-black leading-tight text-[clamp(1rem,4vw,1.75rem)]">
+                  {riotId.trim() || "YourName #TAG"}
+                </h2>
               </div>
 
               <div className="relative rounded-xl bg-white p-4">

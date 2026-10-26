@@ -3,15 +3,16 @@ export function cleanRiotId(value: string): string {
 }
 
 export function isValidRiotId(value: string): boolean {
-    const separator = value.lastIndexOf("#");
+  const id = value.trim();
+  const separator = id.lastIndexOf("#");
 
-    return (
-      separator > 0 &&
-      separator < value.length - 1 &&
-      value.trim() === value &&
-      !value.includes("\n")
-    );
-  }
+  return (
+    separator > 0 &&
+    separator < id.length - 1 &&
+    id.slice(0, separator).trim().length > 0 &&
+    id.slice(separator + 1).trim().length > 0
+  );
+}
 
 export function extractRiotId(qrValue: string): string | null {
   const value = qrValue.trim();
