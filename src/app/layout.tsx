@@ -5,6 +5,7 @@ import { cn } from "@/utils";
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { MainLayout } from '../components/main-layout';
 import type { Metadata, Viewport } from "next";
+import Head from 'next/head';
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -25,6 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn("font-sans", inter.variable, "dark")}>
+      <Head>
+        <meta name="apple-mobile-web-app-title" content="RID Check-in" />
+      </Head>
       <body
         className="vc-init"
       >
